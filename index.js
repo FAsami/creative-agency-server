@@ -17,6 +17,7 @@ const uri = process.env.DB_URL;
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
 client.connect(err => {
+    console.log(err);
     const ordersCollection = client.db("creativeAgency").collection("orders");
     const reviewsCollection = client.db("creativeAgency").collection("reviews");
     const servicesCollection = client.db("creativeAgency").collection("services");
